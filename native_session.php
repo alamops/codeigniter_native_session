@@ -19,8 +19,8 @@ Class Native_Session
         // Init Session
         session_start();
 
-        // Verify Sesison Part 1
-        if($_SESSION[$this->sess_name])
+        // Verify Session Part 1
+        if(isset($_SESSION[$this->sess_name]) && $_SESSION[$this->sess_name])
         {
             if(!$this->verify_expire_time())
                 $this->destroy();
@@ -34,8 +34,8 @@ Class Native_Session
             }
         }
 
-        // Verify Sesison Part 2
-        if(!$_SESSION[$this->sess_name])
+        // Verify Session Part 2
+        if(!isset($_SESSION[$this->sess_name]) || !$_SESSION[$this->sess_name])
         {
             $_SESSION[$this->sess_name] = array();
             // Add expire time
@@ -116,7 +116,7 @@ Class Native_Session
     {
         if($key)
         {
-            // Verify if is an array
+            // Verify if it is an array
             if(is_array($key))
                 $this->_setflashdataarray($key);
             else
