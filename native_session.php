@@ -134,7 +134,7 @@ Class Native_Session
     public function get_flashdata($key)
     {
         if(isset($_SESSION[$this->sess_name]['flashdata'][$key]))
-            return $_SESSION[$this->sess_name][$key];
+            return $_SESSION[$this->sess_name]['flashdata'][$key];
         else
             return null;
     }
