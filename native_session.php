@@ -27,9 +27,9 @@ Class Native_Session
             else
             {
                 // Verify Keep flash
-                if(isset($_SESSION[$this->sess_name]['keep_flash']))
+                if(isset($_SESSION[$this->sess_name]['keep_flash']) && $_SESSION[$this->sess_name]['keep_flash'])
                     $_SESSION[$this->sess_name]['keep_flash'] = false;
-                else
+                else if(isset($_SESSION[$this->sess_name]['flashdata']) && $_SESSION[$this->sess_name]['flashdata'])
                     $this->destroy_flashdata();
             }
         }
@@ -156,6 +156,7 @@ Class Native_Session
     public function destroy_flashdata()
     {
         $_SESSION[$this->sess_name]['flashdata'] = array();
+        $_SESSION[$this->sess_name]['keep_flash'] = false;
     }
 
 }
