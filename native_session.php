@@ -1,5 +1,15 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+/**
+ * @author: Alamo Pereira Saravali
+ * @email: alamo.sarvali@gmail.com
+ * @github: alamops
+ * @facebook: fb.me/alamosaravali
+ * @twitter: @alamosaravali
+ * @instagram: @alamoweb
+ * @website: alamoweb.com.br
+ */
+
 Class Native_Session
 {
     public $sess_name;
